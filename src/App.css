@@ -1,0 +1,104 @@
+/* src/App.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.clicker-card {
+  width: min(90vw, 520px);
+  aspect-ratio: 768 / 1024;
+  background-image: url("/images/background.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.title-box {
+  position: absolute;
+  top: 15%;
+  left: 16%;
+  width: 68%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(36px, 8vw, 72px);
+  letter-spacing: 2px;
+}
+
+.click-area {
+  position: absolute;
+  top: 32%;
+  left: 13%;
+  width: 74%;
+  height: 39%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clover {
+  width: 86%;
+  max-width: 360px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.06s ease, filter 0.06s ease;
+}
+
+.clover.pressed {
+  transform: translateY(0px) scale(1.0);
+  filter: brightness(0.92);
+}
+
+.control-panel {
+  position: absolute;
+  left: 13%;
+  bottom: 8%;
+  width: 74%;
+  text-align: center;
+}
+
+.label {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.sound-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.sound-buttons button {
+  border: 2px solid #111;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sound-buttons button.active {
+  background: #111;
+  color: #fff;
+}
+
+.count {
+  margin-top: 12px;
+  font-size: 18px;
+}
