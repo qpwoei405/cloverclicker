@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 const soundFiles = {
-  standard: "/sounds/standard.wav",
-  soft: "/sounds/soft.wav",
-  hard: "/sounds/hard.wav",
+  standard: "/sounds/standard.mp3",
+  soft: "/sounds/soft.mp3",
+  hard: "/sounds/hard.mp3",
 };
 
 function App() {
