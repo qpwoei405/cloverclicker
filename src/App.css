@@ -111,7 +111,7 @@ body {
   font-size: 18px;
 }
 
-/* 모바일 조정 */
+/* 모바일: 전체 UI 15% 아래로 */
 @media (max-width: 600px) {
   .page {
     padding: 0;
@@ -121,12 +121,15 @@ body {
   .clicker-card {
     width: 100vw;
     max-width: none;
-    background-position: center 10%;
+    background-position: center 15vh;
   }
 
-  /* 클로버 전체 아래로 */
+  .title-box {
+    top: 30%;
+  }
+
   .click-area {
-    top: 40%;
+    top: 45%;
     left: 6%;
     width: 88%;
     height: 43%;
@@ -137,10 +140,9 @@ body {
     max-width: none;
   }
 
-  /* 사운드 UI 더 아래 */
   .control-panel {
     left: 10%;
-    bottom: -2%;
+    bottom: -17%;
     width: 80%;
   }
 
