@@ -1,10 +1,16 @@
-/* src/App.css */
 * {
   box-sizing: border-box;
 }
 
-body {
+html,
+body,
+#root {
   margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
   font-family: Arial, sans-serif;
   background: #fff;
 }
@@ -14,11 +20,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
 }
 
 .clicker-card {
-  width: min(90vw, 520px);
+  width: min(96vw, 520px);
   aspect-ratio: 768 / 1024;
   background-image: url("/images/background.jpg");
   background-size: contain;
@@ -43,32 +49,34 @@ body {
 .click-area {
   position: absolute;
   top: 32%;
-  left: 13%;
-  width: 74%;
-  height: 39%;
+  left: 11%;
+  width: 78%;
+  height: 38%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .clover {
-  width: 86%;
-  max-width: 360px;
+  width: 96%;
+  max-width: 430px;
   cursor: pointer;
   user-select: none;
   -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   transition: transform 0.06s ease, filter 0.06s ease;
 }
 
 .clover.pressed {
-  transform: translateY(0px) scale(1.0);
+  transform: translateY(8px) scale(0.96);
   filter: brightness(0.92);
 }
 
 .control-panel {
   position: absolute;
   left: 13%;
-  bottom: 8%;
+  bottom: 5%;
   width: 74%;
   text-align: center;
 }
@@ -101,4 +109,54 @@ body {
 .count {
   margin-top: 12px;
   font-size: 18px;
+}
+
+/* 모바일 조정 */
+@media (max-width: 600px) {
+  .page {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .clicker-card {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .click-area {
+    top: 30%;
+    left: 6%;
+    width: 88%;
+    height: 43%;
+  }
+
+  .clover {
+    width: 108%;
+    max-width: none;
+  }
+
+  .control-panel {
+    left: 10%;
+    bottom: 2%;
+    width: 80%;
+  }
+
+  .label {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .sound-buttons {
+    gap: 6px;
+  }
+
+  .sound-buttons button {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+
+  .count {
+    margin-top: 8px;
+    font-size: 16px;
+  }
 }

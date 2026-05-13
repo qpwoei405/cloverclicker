@@ -40,11 +40,9 @@ function App() {
             src={isPressed ? "/images/clover-pressed.png" : "/images/clover-default.png"}
             alt="clover clicker"
             className={`clover ${isPressed ? "pressed" : ""}`}
-            onMouseDown={handlePress}
-            onMouseUp={handleRelease}
-            onMouseLeave={handleRelease}
-            onTouchStart={handlePress}
-            onTouchEnd={handleRelease}
+            onPointerDown={handlePress}
+            onPointerUp={handleRelease}
+            onPointerLeave={handleRelease}
             draggable="false"
           />
         </div>
