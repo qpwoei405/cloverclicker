@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     Object.entries(soundFiles).forEach(([key, src]) => {
-      audioPoolRef.current[key] = Array.from({ length: 10 }, () => {
+      audioPoolRef.current[key] = Array.from({ length: 6 }, () => {
         const audio = new Audio(src);
         audio.preload = "auto";
         audio.volume = 1;
