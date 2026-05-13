@@ -1,8 +1,8 @@
 // src/App.jsx
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./App.css";
 
-const sounds = {
+const soundFiles = {
   standard: "/sounds/standard.wav",
   soft: "/sounds/soft.wav",
   hard: "/sounds/hard.wav",
@@ -12,13 +12,23 @@ function App() {
   const [soundType, setSoundType] = useState("standard");
   const [isPressed, setIsPressed] = useState(false);
   const [count, setCount] = useState(0);
-  const audioRef = useRef(null);
+  const audioRefs = useRef({});
+
+  useEffect(() => {
+    Object.entries(soundFiles).forEach(([key, src]) => {
+      const audio = new Audio(src);
+      audio.preload = "auto";
+      audioRefs.current[key] = audio;
+    });
+  }, []);
 
   const playSound = () => {
-    const audio = new Audio(sounds[soundType]);
+    const audio = audioRefs.current[soundType];
+    if (!audio) return;
+
+    audio.pause();
     audio.currentTime = 0;
-    audio.play();
-    audioRef.current = audio;
+    audio.play().catch(() => {});
   };
 
   const handlePress = () => {
@@ -34,6 +44,7 @@ function App() {
   return (
     <main className="page">
       <div className="clicker-card">
+        <div className="title-box">click me!</div>
 
         <div className="click-area">
           <img

@@ -121,6 +121,7 @@ body {
   .clicker-card {
     width: 100vw;
     max-width: none;
+    background-position: center 28px;
   }
 
   /* 제목 아래로 */
