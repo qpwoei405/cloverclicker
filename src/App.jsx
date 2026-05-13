@@ -16,17 +16,21 @@ function App() {
 
   useEffect(() => {
     Object.entries(soundFiles).forEach(([key, src]) => {
-      const audio = new Audio(src);
-      audio.preload = "auto";
-      audioRefs.current[key] = audio;
+      audioPoolRef.current[key] = Array.from({ length: 8 }, () => {
+        const audio = new Audio(src);
+        audio.preload = "auto";
+        return audio;
+      });
     });
   }, []);
 
   const playSound = () => {
-    const audio = audioRefs.current[soundType];
-    if (!audio) return;
+    const pool = audioPoolRef.current[soundType];
+    if (!pool) return;
 
-    audio.pause();
+    const audio =
+      pool.find((a) => a.paused || a.ended) || pool[0];
+
     audio.currentTime = 0;
     audio.play().catch(() => {});
   };
@@ -44,7 +48,6 @@ function App() {
   return (
     <main className="page">
       <div className="clicker-card">
-        <div className="title-box">click me!</div>
 
         <div className="click-area">
           <img
