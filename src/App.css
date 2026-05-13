@@ -69,7 +69,7 @@ body {
 }
 
 .clover.pressed {
-  transform: translateY(8px) scale(0.96);
+  transform: translateY(0px) scale(1.0);
   filter: brightness(0.92);
 }
 
@@ -123,8 +123,14 @@ body {
     max-width: none;
   }
 
+  /* 제목 아래로 */
+  .title-box {
+    top: 18%;
+  }
+
+  /* 클로버 전체 아래로 */
   .click-area {
-    top: 30%;
+    top: 36%;
     left: 6%;
     width: 88%;
     height: 43%;
@@ -135,9 +141,10 @@ body {
     max-width: none;
   }
 
+  /* 사운드 UI 더 아래 */
   .control-panel {
     left: 10%;
-    bottom: 2%;
+    bottom: -2%;
     width: 80%;
   }
 
