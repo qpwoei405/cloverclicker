@@ -121,17 +121,12 @@ body {
   .clicker-card {
     width: 100vw;
     max-width: none;
-    background-position: center 28px;
-  }
-
-  /* 제목 아래로 */
-  .title-box {
-    top: 18%;
+    background-position: center 10%;
   }
 
   /* 클로버 전체 아래로 */
   .click-area {
-    top: 36%;
+    top: 40%;
     left: 6%;
     width: 88%;
     height: 43%;
