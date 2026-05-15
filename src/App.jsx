@@ -1,6 +1,6 @@
+import { Analytics } from "@vercel/analytics/react"
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import { Analytics } from "@vercel/analytics/next"
 
 const soundFiles = {
   standard: "/sounds/standard.mp3",
